@@ -1,0 +1,631 @@
+#WIDGET
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'ticketsalesandregistrationpage_model.dart';
+export 'ticketsalesandregistrationpage_model.dart';
+
+class TicketsalesandregistrationpageWidget extends StatefulWidget {
+  /// Ticket Sales and Registrations Page
+  /// Roles: Organizer, Attendee
+  /// Purpose: Track ticket sales and manage registrations.
+  /// Features:
+  /// Organizers: View ticket sales in real time with analytics.
+  /// Attendees: Purchase or transfer tickets.
+  /// UI Design:
+  /// Charts for organizers showing sales trends.
+  /// User-friendly ticket booking interface for attendees.
+  const TicketsalesandregistrationpageWidget({super.key});
+
+  @override
+  State<TicketsalesandregistrationpageWidget> createState() =>
+      _TicketsalesandregistrationpageWidgetState();
+}
+
+class _TicketsalesandregistrationpageWidgetState
+    extends State<TicketsalesandregistrationpageWidget> {
+  late TicketsalesandregistrationpageModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => TicketsalesandregistrationpageModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: Container(
+          width: MediaQuery.sizeOf(context).width,
+          height: MediaQuery.sizeOf(context).height * 1,
+          child: Stack(
+            children: [
+              Container(
+                width: MediaQuery.sizeOf(context).width,
+                height: MediaQuery.sizeOf(context).height * 1,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.network(
+                      'https://images.unsplash.com/photo-1607457561901-e6ec3a6d16cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxwaW5rJTIwbWFyYmxlfGVufDB8fHx8MTczMjM5MDc3NXww&ixlib=rb-4.0.3&q=80&w=1080',
+                    ).image,
+                  ),
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF1A237E), Color(0xFF3949AB)],
+                    stops: [0, 1],
+                    begin: AlignmentDirectional(0, -1),
+                    end: AlignmentDirectional(0, 1),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 24),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Event Analytics',
+                          style: FlutterFlowTheme.of(context)
+                              .headlineLarge
+                              .override(
+                                fontFamily: 'Inter Tight',
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
+                        Text(
+                          'Track your event\'s performance',
+                          style:
+                              FlutterFlowTheme.of(context).bodyLarge.override(
+                                    fontFamily: 'Inter',
+                                    color: Color(0xFFE0E0E0),
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24, 24, 24, 24),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Total Sales',
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                          Text(
+                                            '\$12,450',
+                                            style: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Container(
+                                        width: 60,
+                                        height: 60,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFE3F2FD),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        child: Icon(
+                                          Icons.payments,
+                                          color: Color(0xFF1565C0),
+                                          size: 30,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    width: MediaQuery.sizeOf(context).width,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.5, 0.5),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8),
+                                        child: Text(
+                                          '[Sales Chart Placeholder]',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Material(
+                              color: Colors.transparent,
+                              elevation: 4,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 0.48,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 16, 16, 16),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        'Tickets Sold',
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        '245',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        '+12% from last week',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(height: 8)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: Colors.transparent,
+                              elevation: 4,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 0.48,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 16, 16, 16),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        'Available',
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        '155',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        '61% remaining',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(height: 8)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24, 24, 24, 24),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Recent Transactions',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  ListView(
+                                    padding: EdgeInsets.zero,
+                                    primary: false,
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 48,
+                                                height: 48,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFE3F2FD),
+                                                  borderRadius:
+                                                      BorderRadius.circular(24),
+                                                ),
+                                                child: Icon(
+                                                  Icons.confirmation_num,
+                                                  color: Color(0xFF1565C0),
+                                                  size: 24,
+                                                ),
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'VIP Pass',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Sarah Johnson • 2 tickets',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ].divide(SizedBox(width: 16)),
+                                          ),
+                                          Text(
+                                            '\$150',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 48,
+                                                height: 48,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFE3F2FD),
+                                                  borderRadius:
+                                                      BorderRadius.circular(24),
+                                                ),
+                                                child: Icon(
+                                                  Icons.confirmation_num,
+                                                  color: Color(0xFF1565C0),
+                                                  size: 24,
+                                                ),
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'General Admission',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Mike Smith • 1 ticket',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ].divide(SizedBox(width: 16)),
+                                          ),
+                                          Text(
+                                            '\$50',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ].divide(SizedBox(height: 16)),
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24, 24, 24, 24),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Quick Actions',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text: 'Export Report',
+                                        icon: Icon(
+                                          Icons.download,
+                                          color: Colors.white,
+                                          size: 15,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: 160,
+                                          height: 50,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Inter',
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 0,
+                                          borderRadius:
+                                              BorderRadius.circular(25),
+                                        ),
+                                      ),
+                                      FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text: 'Send Invites',
+                                        icon: Icon(
+                                          Icons.send,
+                                          color: Colors.white,
+                                          size: 15,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: 160,
+                                          height: 50,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Inter',
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 0,
+                                          borderRadius:
+                                              BorderRadius.circular(25),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ].divide(SizedBox(height: 24)),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+#MODEL
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'ticketsalesandregistrationpage_widget.dart'
+    show TicketsalesandregistrationpageWidget;
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class TicketsalesandregistrationpageModel
+    extends FlutterFlowModel<TicketsalesandregistrationpageWidget> {
+  @override
+  void initState(BuildContext context) {}
+
+  @override
+  void dispose() {}
+}
