@@ -1,0 +1,825 @@
+#WIDGET
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'eventdetailspage_model.dart';
+export 'eventdetailspage_model.dart';
+
+class EventdetailspageWidget extends StatefulWidget {
+  /// Event Details Page
+  /// Roles: Organizer, Vendor, Attendee
+  /// Purpose: Provide event-specific details tailored to each role.
+  /// Features:
+  /// Organizers: View/edit event details (e.g., agenda, venue layout).
+  /// Vendors: Access booth setup instructions and deadlines.
+  /// Attendees: Access the agenda, speaker bios, and venue map.
+  /// UI Design:
+  /// Dynamic layout that adapts to the role.
+  const EventdetailspageWidget({super.key});
+
+  @override
+  State<EventdetailspageWidget> createState() => _EventdetailspageWidgetState();
+}
+
+class _EventdetailspageWidgetState extends State<EventdetailspageWidget> {
+  late EventdetailspageModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => EventdetailspageModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: Container(
+          width: MediaQuery.sizeOf(context).width,
+          height: MediaQuery.sizeOf(context).height * 1,
+          child: Stack(
+            children: [
+              Container(
+                width: MediaQuery.sizeOf(context).width,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.network(
+                      'https://images.unsplash.com/photo-1478145787956-f6f12c59624d?w=500&h=500',
+                    ).image,
+                  ),
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF1E88E5), Color(0x1565C0DD)],
+                    stops: [0, 1],
+                    begin: AlignmentDirectional(0, -1),
+                    end: AlignmentDirectional(0, 1),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FlutterFlowIconButton(
+                            borderRadius: 20,
+                            buttonSize: 40,
+                            fillColor: Color(0x33FFFFFF),
+                            icon: Icon(
+                              Icons.arrow_back_rounded,
+                              color: FlutterFlowTheme.of(context).info,
+                              size: 24,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Color(0x33FFFFFF),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8, 16, 8, 16),
+                                  child: Text(
+                                    'Vendor',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              FlutterFlowIconButton(
+                                borderRadius: 20,
+                                buttonSize: 40,
+                                fillColor: Color(0x33FFFFFF),
+                                icon: Icon(
+                                  Icons.more_vert,
+                                  color: FlutterFlowTheme.of(context).info,
+                                  size: 24,
+                                ),
+                                onPressed: () {
+                                  print('IconButton pressed ...');
+                                },
+                              ),
+                            ].divide(SizedBox(width: 12)),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Food & Culture Festival 2024',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Inter Tight',
+                                  color: FlutterFlowTheme.of(context).info,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                          Text(
+                            'March 15-17, 2024 • Convention Center',
+                            style:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      fontFamily: 'Inter',
+                                      color: Color(0xFFE0E0E0),
+                                      letterSpacing: 0.0,
+                                    ),
+                          ),
+                        ],
+                      ),
+                    ].divide(SizedBox(height: 24)),
+                  ),
+                ),
+              ),
+              Container(
+                width: MediaQuery.sizeOf(context).width,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.network(
+                      'https://images.unsplash.com/photo-1607457561901-e6ec3a6d16cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxwaW5rJTIwbWFyYmxlfGVufDB8fHx8MTczMjM5MDc3NXww&ixlib=rb-4.0.3&q=80&w=1080',
+                    ).image,
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Your Booth Setup',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Setup Time',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                          Text(
+                                            'March 14, 7 AM - 2 PM',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFE8F5E9),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  4, 12, 4, 12),
+                                          child: Text(
+                                            'Confirmed',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodySmall
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: Color(0xFF2E7D32),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    width: MediaQuery.sizeOf(context).width,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFF5F5F5),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.network(
+                                            'https://images.unsplash.com/photo-1684839250394-1f5f18282727?w=500&h=500',
+                                            width: MediaQuery.sizeOf(context)
+                                                .width,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                1,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              1,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x33000000),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16, 16, 16, 16),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.place,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 40,
+                                                ),
+                                                Text(
+                                                  'Block A, Booth #23',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Important Deadlines',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFFFF3E0),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          12, 12, 12, 12),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.warning_amber,
+                                                color: Color(0xFFEF6C00),
+                                                size: 24,
+                                              ),
+                                              Text(
+                                                'Menu Submission',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ].divide(SizedBox(width: 12)),
+                                          ),
+                                          Text(
+                                            'Today',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFE3F2FD),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          12, 12, 12, 12),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.event,
+                                                color: Color(0xFF1565C0),
+                                                size: 24,
+                                              ),
+                                              Text(
+                                                'Safety Training',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ].divide(SizedBox(width: 12)),
+                                          ),
+                                          Text(
+                                            'Mar 14',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Required Documents',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Container(
+                                    width: MediaQuery.sizeOf(context).width,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFF5F5F5),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          12, 12, 12, 12),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.check_circle,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .success,
+                                                    size: 24,
+                                                  ),
+                                                  Text(
+                                                    'Food Handler\'s License',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ].divide(SizedBox(width: 12)),
+                                              ),
+                                              Icon(
+                                                Icons.chevron_right,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24,
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.check_circle_outline,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    size: 24,
+                                                  ),
+                                                  Text(
+                                                    'Insurance Certificate',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ].divide(SizedBox(width: 12)),
+                                              ),
+                                              Icon(
+                                                Icons.chevron_right,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24,
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.check_circle,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .success,
+                                                    size: 24,
+                                                  ),
+                                                  Text(
+                                                    'Menu Card',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ].divide(SizedBox(width: 12)),
+                                              ),
+                                              Icon(
+                                                Icons.chevron_right,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24,
+                                              ),
+                                            ],
+                                          ),
+                                        ].divide(SizedBox(height: 12)),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Event Schedule',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Container(
+                                    width: MediaQuery.sizeOf(context).width,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFF5F5F5),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          12, 12, 12, 12),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Vendor Briefing',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'March 14, 9:00 AM',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFE3F2FD),
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(4, 12, 4, 12),
+                                                  child: Text(
+                                                    'Mandatory',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color:
+                                                              Color(0xFF1565C0),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Opening Ceremony',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'March 15, 10:00 AM',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFE8F5E9),
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(4, 12, 4, 12),
+                                                  child: Text(
+                                                    'Optional',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color:
+                                                              Color(0xFF2E7D32),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ].divide(SizedBox(height: 12)),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 16)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ].divide(SizedBox(height: 24)),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+#MODEL
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'eventdetailspage_widget.dart' show EventdetailspageWidget;
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class EventdetailspageModel extends FlutterFlowModel<EventdetailspageWidget> {
+  @override
+  void initState(BuildContext context) {}
+
+  @override
+  void dispose() {}
+}
