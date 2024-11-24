@@ -24,7 +24,6 @@ Chime & Charm empowers event management companies to assign roles and permission
 - Simulate API calls for CRUD operations on events, users, and roles.
 ## Tech Stack
 ### Frontend Framework: FlutterFlow
-### Database: Firebase Firestore
 ### Authentication: Firebase Authentication
 ### Hosting: Firebase Hosting (Optional for deployment)
 ## Pages Overview
