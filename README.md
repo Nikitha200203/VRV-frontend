@@ -85,7 +85,7 @@ Chime & Charm empowers event management companies to assign roles and permission
     <img src="/vrv/permissionspage.png" alt="drawing" width="700"/>
 ## Setup Instructions
 1. Clone the Repository
-git clone https://github.com/your-username/chime-charm-rbac.git
+git clone https://github.com/Nikitha200203/VRV-frontend
 2. Open in FlutterFlow
 Log in to FlutterFlow.
 Import the project files from the repository.
