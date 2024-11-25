@@ -31,58 +31,61 @@ Chime & Charm empowers event management companies to assign roles and permission
 - Secure login for all users with role-based redirection to dashboards.
 - Includes “Forgot Password” feature.
   
-  <img src="/vrv/loginpage.png" alt="drawing" width="700"/>
+  <img src="/images/1.png" alt="drawing" width="500" height="1050"/>
 
 2. Admin Dashboard
 - Add and manage users, roles, and permissions.
 - View all ongoing and past events.
 - Generate event performance reports.
 
-  <img src="/vrv/volunteerdashboard.png" alt="drawing" width="700"/>
+  <img src="/images/5.png" alt="drawing" width="500" height="1050"/>
   
 3. Event Manager Dashboard
 - View assigned events.
 - Coordinate with vendors and staff.
 - Manage event timelines and client communications.
 
-  <img src="/vrv/organizerdashboard.png" alt="drawing" width="700"/>
+  <img src="/images/2.png" alt="drawing" width="500" height="1050"/>
   
 4. Vendor Dashboard
 - Access event assignments.
 - View and manage service requirements.
 - Update service status (e.g., In Progress, Completed).
 
-<img src="/vrv/vendordashboard.png" alt="drawing" width="700"/>
+<img src="/images/3.png" alt="drawing" width="500" height="1050"/>
   
 5. Client Dashboard
 - View event details, timelines, and budgets.
 - Provide feedback or approvals for vendor services.
 - Chat with assigned Event Manager.
 
-<img src="/vrv/attendeedashboard.png" alt="drawing" width="700"/>
+<img src="/images/4.png" alt="drawing" width="500" height="1050"/>
 
 6. Role Management Page
 - Define and customize roles like Admin, Event Manager, Vendor, Client, and Staff.
 - Assign permissions dynamically to suit business needs.
 
-  <img src="/vrv/rolemanagementpage.png" alt="drawing" width="700"/>
+  <img src="/images/6.png" alt="drawing" width="500" height="1050"/>
+  <img src="/images/6.1.png" alt="drawing" width="500" height="1050"/>
   
 7. Event Management Page
 - Create and update events with key details (name, date, venue, budget, assigned personnel).
 - Track progress and milestones for each event.
 
-  <img src="/vrv/eventsandregistrationpage.png" alt="drawing" width="700"/>
+  <img src="/images/9.png" alt="drawing" width="500" height="1050"/>
 
 8. Settings Page
    
-   <img src="/vrv/settings.png" alt="drawing" width="700"/>
-   <img src="/vrv/settins2.0.png" alt="drawing" width="700"/>
+   <img src="/images/11.png" alt="drawing" width="500" height="1050"/>
+   <img src="/images/11.1.png" alt="drawing" width="500" height="1050"/>
 9. Feedback and Survey page
 
-    <img src="/vrv/feedbackandsurveypage.png" alt="drawing" width="700"/>
+    <img src="/images/10.png" alt="drawing" width="500" height="1050"/>
+    <img src="/images/10.1.png" alt="drawing" width="500" height="1050"/>
 10. Permissions Page
 
-    <img src="/vrv/permissionspage.png" alt="drawing" width="700"/>
+    <img src="/images/6.png" alt="drawing" width="500" height="1050"/>
+    <img src="/images/6.1.png" alt="drawing" width="500" height="1050"/>
 ## Setup Instructions
 1. Clone the Repository
 git clone https://github.com/Nikitha200203/VRV-frontend
